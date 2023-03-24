@@ -1,0 +1,20 @@
+<%- include("header") -%>
+
+<h1 class="text-center"><%=title%></h1>
+<div class="block">
+<form action="<%=delParam%>" method="post">
+    <ul>
+        <%for(let i=0;i<tasks.length;i++){%>
+        <div class="listelem">
+            <input type="checkbox" name="checkbox" value="<%=tasks[i]._id%>" onchange="this.form.submit()">
+            <li><span><%= tasks[i].text %></span></li>
+        </div>
+        <%}%>
+    </ul>
+</form>
+<form action="<%=param%>" method="post">
+    <input type="text" name="addTask" id="#addTask">
+    <button id="submit" name="submit" type="submit" value=<%= title%> >+</button>
+</form>
+    </div>
+<%- include("footer") -%>
