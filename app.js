@@ -131,4 +131,8 @@ app.post("/delete/:param", async function(req, res){
     await Current.deleteOne({_id:req.body.checkbox}).catch((err)=>{console.log(err)});
 })
 
-app.listen(3000);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
