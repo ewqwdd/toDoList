@@ -2,7 +2,7 @@
 
 <h1 class="text-center"><%=title%></h1>
 <div class="block">
-<form action="<%=delParam%>" method="post">
+<form action="/delete" method="post">
     <ul>
         <%for(let i=0;i<tasks.length;i++){%>
         <div class="listelem">
@@ -11,10 +11,11 @@
         </div>
         <%}%>
     </ul>
+    <input type="hidden" name="listName" id="#addTask" value="<%=param%>">
 </form>
 <form action="<%=param%>" method="post">
     <input type="text" name="addTask" id="#addTask">
-    <button id="submit" name="submit" type="submit" value=<%= title%> >+</button>
+    <button id="submit" name="submit" type="submit" value=<%= param%> >+</button>
 </form>
     </div>
 <%- include("footer") -%>
